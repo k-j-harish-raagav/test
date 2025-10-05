@@ -1,0 +1,16 @@
+name: Email Check Workflow
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # allows manual trigger
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 24f2008074@ds.study.iitm.ac.in
+        run: echo "Hello, world! Workflow triggered successfully ✅"
