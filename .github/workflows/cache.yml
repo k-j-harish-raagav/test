@@ -1,0 +1,23 @@
+name: Cache Dependencies Workflow
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # allows manual run too
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Cache Python dependencies
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: cache-d2d23f3
+
+      - name: prime-cache-d2d23f3
+        run: echo "Cache hit: ${{ steps.cache.outputs.cache-hit }}"
