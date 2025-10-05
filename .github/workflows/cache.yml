@@ -3,7 +3,7 @@ name: Cache Dependencies Workflow
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # allows manual run too
+  workflow_dispatch:
 
 jobs:
   build:
